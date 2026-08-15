@@ -102,34 +102,34 @@ function ContactPage() {
 
               <form onSubmit={handleSubmit} noValidate className="grid gap-5 p-5 md:p-6">
                 <div>
-                  <label htmlFor="name" className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                    name <span className="text-accent">*</span>
+                  <label htmlFor="Nome" className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    Nome <span className="text-accent">*</span>
                   </label>
-                  <input id="name" value={values.name} onChange={set("name")} maxLength={100} placeholder="Ada Lovelace" className={fieldClass} />
+                  <input id="Nome" value={values.name} onChange={set("name")} maxLength={100} placeholder="Ada Lovelace" className={fieldClass} />
                   {errors.name && <p className="mt-2 font-mono text-[11px] text-destructive">{errors.name}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                    email <span className="text-accent">*</span>
+                  <label htmlFor="Email" className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    Email <span className="text-accent">*</span>
                   </label>
-                  <input id="email" type="email" value={values.email} onChange={set("email")} maxLength={255} placeholder="you@company.com" className={fieldClass} />
+                  <input id="Email" type="email" value={values.email} onChange={set("email")} maxLength={255} placeholder="you@company.com" className={fieldClass} />
                   {errors.email && <p className="mt-2 font-mono text-[11px] text-destructive">{errors.email}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                    subject <span className="text-accent">*</span>
+                  <label htmlFor="Assunto" className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    Assunto <span className="text-accent">*</span>
                   </label>
-                  <input id="subject" value={values.subject} onChange={set("subject")} maxLength={150} placeholder="Spring Boot API consulting" className={fieldClass} />
+                  <input id="Assunto" value={values.subject} onChange={set("subject")} maxLength={150} placeholder="Spring Boot API consulting" className={fieldClass} />
                   {errors.subject && <p className="mt-2 font-mono text-[11px] text-destructive">{errors.subject}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                    message <span className="text-accent">*</span>
+                  <label htmlFor="Mensagem" className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    Mensagem <span className="text-accent">*</span>
                   </label>
-                  <textarea id="message" rows={6} value={values.message} onChange={set("message")} maxLength={1000} placeholder="Describe the project, stack, and timeline." className={`${fieldClass} resize-none`} />
+                  <textarea id="Mensagem" rows={6} value={values.message} onChange={set("message")} maxLength={1000} placeholder="Describe the project, stack, and timeline." className={`${fieldClass} resize-none`} />
                   <div className="mt-2 flex items-center justify-between">
                     {errors.message ? (
                       <p className="font-mono text-[11px] text-destructive">{errors.message}</p>

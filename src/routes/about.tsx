@@ -66,7 +66,7 @@ function AboutPage() {
 
             <div className="mt-10">
               <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-accent">Localização</h3>
-              <p className="font-sans text-sm text-muted-foreground">São Paulo, Brasil</p>
+              <p className="font-sans text-sm text-muted-foreground">Mauá, São Paulo, Brasil</p>
               <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
                 UTC-3
               </p>
