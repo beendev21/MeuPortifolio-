@@ -23,23 +23,23 @@ export const Route = createFileRoute("/")({
 const projects = [
   {
     id: "01",
-    category: "Full Stack",
-    title: "Nexus Dashboard",
-    description: "Performance-first analytics dashboard for cloud-native applications.",
-    stack: "React • Node.js • PostgreSQL",
+    category: "Front-End",
+    title: "Landing Page Profissional para Oficina Automotiva",
+    description: "Aplicação front-end estruturada com foco em escalabilidade, performance e separação de responsabilidades. Implementa manipulação dinâmica de dados, gerenciamento de estado na interface, otimização de renderização via Intersection Observer e integração com serviços externos (Google Maps e WhatsApp).",
+    stack: "HTML • CSS • JavaScript • Google Maps API • WhatsApp API",
     link: "#",
     image: dashboardImage,
-    cta: "View case study",
+    cta: "Ver projeto",
   },
   {
     id: "02",
-    category: "Open Source",
-    title: "Glitch Engine",
-    description: "High-throughput data processing engine with a Rust core and WebAssembly runtime.",
-    stack: "Rust • WASM • TypeScript",
+    category: "Full Stack",
+    title: "Santos Tech - Plataforma de eSports",
+    description: "Plataforma completa para torneios de CS, LoL e Valorant. Implementação de SignalR para atualizações em tempo real, reformulação do painel administrativo e integração com Steam API e autenticação JWT. Infraestrutura robusta com PostgreSQL, Redis e Cloudflare R2.",
+    stack: "React.js • .NET • PostgreSQL • Redis • SignalR • Cloudflare R2",
     link: "#",
     image: engineImage,
-    cta: "Repository",
+    cta: "Repositório",
   },
 ];
 
@@ -84,28 +84,28 @@ const certificates = [
 
 const experiences = [
   {
-    period: "2022 — Present",
-    role: "Lead Developer",
-    company: "Synthetix Labs",
+    period: "05/26 — 08/26",
+    role: "Programador Júnior",
+    company: "SWB Indústria Mecânica e Automação Industrial Ltda.",
     description:
-      "Leading the frontend platform team, designing scalable design systems, and mentoring engineers across the organization.",
-    highlights: ["Design system adoption", "Micro-frontends", "Team mentorship"],
+      "Desenvolvimento de sistemas de automação industrial utilizando JavaScript, Python e Node-RED. Atuação técnica com lógica Ladder e interpretação de diagramas elétricos para integração eficiente entre software e hardware.",
+    highlights: ["JavaScript", "Python", "Node-RED", "Automação Industrial"],
   },
   {
-    period: "2020 — 2022",
-    role: "Frontend Engineer",
-    company: "Orbital Systems",
+    period: "01/26 — 07/26",
+    role: "Front-End Developer",
+    company: "Plataforma Competitiva de e-Sports",
     description:
-      "Built core features for a high-traffic SaaS platform, improved performance metrics, and implemented real-time collaboration tools.",
-    highlights: ["React migration", "WebSocket features", "Performance tuning"],
+      "Atuação no Front-End com React.js e planejamento da arquitetura (MVP). Responsável direto pela implementação do SignalR para comunicação em tempo real e reformulação completa do painel administrativo, além da construção de interfaces para gerenciamento de times, rankings e chaveamento automático.",
+    highlights: ["React.js", "SignalR", ".NET", "PostgreSQL", "Redis"],
   },
   {
-    period: "2018 — 2020",
-    role: "Junior Developer",
-    company: "Nova Digital",
+    period: "01/26 — 03/26",
+    role: "Desenvolvedor Freelancer",
+    company: "Companhia do Conserto",
     description:
-      "Started my career building REST APIs, integrating third-party services, and contributing to internal tooling.",
-    highlights: ["API integrations", "Internal dashboards", "CI/CD pipelines"],
+      "Desenvolvimento de uma aplicação web para captação de clientes no setor automotivo, aplicando princípios de Engenharia de Software. Foco em performance, escalabilidade, manipulação dinâmica de dados e integração com APIs (Google Maps, WhatsApp).",
+    highlights: ["JavaScript", "Google Maps API", "WhatsApp API", "Performance"],
   },
 ];
 
