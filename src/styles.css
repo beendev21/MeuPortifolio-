@@ -1,0 +1,140 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system: Technical Monospace — dark, minimal, high-contrast.
+ *
+ * Tokens are semantic so every component reads from the same source of truth.
+ * All custom colors are defined in oklch.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+:root {
+  --radius: 0.375rem;
+
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.98 0 0);
+  --surface: oklch(0.12 0 0);
+  --accent: oklch(0.85 0.15 95);
+  --accent-foreground: oklch(0.05 0 0);
+  --muted: oklch(0.12 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --border: oklch(1 0 0 / 0.05);
+  --ring: oklch(0.85 0.15 95);
+
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.dark {
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.98 0 0);
+  --surface: oklch(0.12 0 0);
+  --accent: oklch(0.85 0.15 95);
+  --accent-foreground: oklch(0.05 0 0);
+  --muted: oklch(0.12 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --border: oklch(1 0 0 / 0.05);
+  --ring: oklch(0.85 0.15 95);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  section[id] {
+    scroll-margin-top: 96px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-foreground);
+  }
+}
+
+@layer components {
+  .portfolio-section {
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  @supports (animation-timeline: view()) {
+    .portfolio-section {
+      opacity: 0.88;
+      transform: translateY(18px);
+      animation: section-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 42%;
+    }
+  }
+}
+
+@keyframes section-reveal {
+  0% {
+    opacity: 0.2;
+    transform: translateY(26px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .portfolio-section {
+    transition: none;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility text-dim {
+  color: var(--color-muted-foreground);
+}
+
+@utility font-sans-body {
+  font-family: var(--font-sans);
+}
+
+@utility font-mono-body {
+  font-family: var(--font-mono);
+}
