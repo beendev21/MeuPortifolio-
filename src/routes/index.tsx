@@ -125,6 +125,7 @@ const skills = [
 ];
 
 const EMAIL = "brenosilvavalecontato@gmail.com";
+const WHATSAPP_NUMBER = "5511985426184";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, { message: "Name is required" }).max(100, { message: "Name must be under 100 characters" }),
@@ -168,9 +169,9 @@ function HomePage() {
 
     setErrors({});
     const { name, email, subject, message } = result.data;
-    const body = `${message}\n\n--\n${name}\n${email}`;
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    toast.success("202 Accepted — opening your email client.");
+    const text = `Nova solicitação\n\nNome: ${name}\nE-mail: ${email}\nAssunto: ${subject}\n\nMensagem:\n${message}`;
+    window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    toast.success("Abrindo conversa no WhatsApp.");
   };
 
   return (
