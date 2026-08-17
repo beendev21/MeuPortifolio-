@@ -77,7 +77,7 @@ function ContactPage() {
           <div className="md:col-span-5">
             <h3 className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-accent">Vamos conversar</h3>
             <p className="font-sans text-xl leading-relaxed text-foreground">
-              Construindo uma API, migrando um monólito ou otimizando uma query lenta? Envie a solicitação — eu respondo.
+              Construindo uma API, ou otimizando uma query lenta? Envie a solicitação eu respondo.
             </p>
 
             <div className="mt-8 grid gap-3">

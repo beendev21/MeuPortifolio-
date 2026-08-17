@@ -350,7 +350,7 @@ function HomePage() {
 
       <section id="about" className="portfolio-section py-20">
         <h2 className="mb-12 border-b border-border pb-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
-          About Me
+          Sobre mim
         </h2>
 
         <div className="grid gap-16 md:grid-cols-12">
@@ -399,13 +399,13 @@ function HomePage() {
           <div className="md:col-span-5">
             <h3 className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-accent">Vamos conversar</h3>
             <p className="font-sans text-xl leading-relaxed text-foreground">
-              Construindo uma API, migrando um monólito ou otimizando uma query lenta? Envie a solicitação — eu respondo.
+              Construindo uma API, migrando ou otimizando uma query lenta? Envie a solicitação eu respondo.
             </p>
 
             <div className="mt-8 grid gap-3">
               <SocialLink href={`mailto:${EMAIL}`} label="Gmail" />
-              <SocialLink href="https://github.com/brenosilva" label="GitHub" />
-              <SocialLink href="https://linkedin.com/in/brenosilva" label="LinkedIn" />
+              <SocialLink href="https://github.com/beendev21" label="GitHub" />
+              <SocialLink href="https://www.linkedin.com/in/brenosilvavale/" label="LinkedIn" />
             </div>
 
             <p className="mt-8 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
