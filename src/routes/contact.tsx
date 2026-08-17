@@ -17,7 +17,7 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const EMAIL = "brenosilva.dev@gmail.com";
+const EMAIL = "brenosilvavalecontato@gmail.com";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, { message: "Name is required" }).max(100, { message: "Name must be under 100 characters" }),
