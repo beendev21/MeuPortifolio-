@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import dashboardImage from "../assets/project-dashboard.png";
 import engineImage from "../assets/project-engine.png";
 
 export const Route = createFileRoute("/projects")({
@@ -23,7 +22,6 @@ const projects = [
     description: "Performance-first analytics dashboard for cloud-native applications.",
     stack: "React • Node.js • PostgreSQL",
     link: "#",
-    image: dashboardImage,
     cta: "View case study",
   },
   {
