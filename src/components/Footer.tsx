@@ -5,7 +5,7 @@ export function Footer() {
         <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
           © {new Date().getFullYear()} — Built with precision
         </p>
-        <div className="flex gap-8">
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-center sm:gap-x-8">
           <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
             Breno Silva
           </span>

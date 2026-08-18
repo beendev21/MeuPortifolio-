@@ -22,7 +22,7 @@ export function Header() {
         >
           Dev_Breno/2004
         </Link>
-        <div className="flex items-center gap-6">
+        <div className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => {
             const active = pathname === "/" && hash === "#" + link.to.split("#")[1];
             return (
@@ -38,6 +38,32 @@ export function Header() {
             );
           })}
         </div>
+        <details className="group relative md:hidden">
+          <summary
+            aria-label="Abrir menu de navegação"
+            className="mobile-menu-toggle cursor-pointer list-none text-muted-foreground transition-colors hover:text-accent [&::-webkit-details-marker]:hidden"
+          >
+            <span />
+            <span />
+            <span />
+          </summary>
+          <div className="absolute right-0 top-[calc(100%+1rem)] grid min-w-40 gap-1 border border-border bg-background p-2 shadow-xl">
+            {navLinks.map((link) => {
+              const active = pathname === "/" && hash === "#" + link.to.split("#")[1];
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`px-3 py-2 font-mono text-[10px] uppercase tracking-widest transition-colors hover:bg-muted ${
+                    active ? "text-accent" : "text-muted-foreground hover:text-accent"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
+        </details>
       </nav>
     </header>
   );

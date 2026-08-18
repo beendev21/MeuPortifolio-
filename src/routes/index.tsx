@@ -27,9 +27,9 @@ const projects = [
     title: "Landing Page Profissional para Oficina Automotiva",
     description: "Aplicação front-end estruturada com foco em escalabilidade, performance e separação de responsabilidades. Implementa manipulação dinâmica de dados, gerenciamento de estado na interface, otimização de renderização via Intersection Observer e integração com serviços externos (Google Maps e WhatsApp).",
     stack: "HTML • CSS • JavaScript • Google Maps API • WhatsApp API",
-    link: "#",
+    link: "https://github.com/beendev21/MeuPortifolio-",
     video: workshopVideo,
-    cta: "Ver projeto",
+    cta: "Ver repositório",
   },
   {
     id: "02",
@@ -45,40 +45,57 @@ const projects = [
 
 const courses = [
   {
-    title: "Full-Stack Architecture",
-    provider: "MIT Open Learning",
-    year: "2024",
-    status: "Completed",
-  },
-  {
-    title: "Advanced Distributed Systems",
-    provider: "Coursera",
-    year: "2024",
-    status: "Completed",
-  },
-  {
-    title: "React Performance Patterns",
-    provider: "Epic React",
-    year: "2023",
-    status: "Completed",
+    title: "Introdução ao Databricks",
+    provider: "Databricks",
+    description: "Fundamentos da plataforma Databricks para engenharia e análise de dados em larga escala.",
   },
 ];
 
 const certificates = [
   {
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    year: "2023",
+    title: "Manipulando dados no Python",
+    issuer: "Alura",
+    description: "Certificado de conclusão emitido pela Alura.",
   },
   {
-    title: "Cloud Architecture Professional",
-    issuer: "Google Cloud",
-    year: "2023",
+    title: "Estruturas condicionais",
+    issuer: "Alura",
+    description: "Certificado de conclusão emitido pela Alura.",
   },
   {
-    title: "Advanced System Design",
-    issuer: "MIT Professional Education",
-    year: "2022",
+    title: "Estruturas de repetição",
+    issuer: "Alura",
+    description: "Certificado de conclusão emitido pela Alura.",
+  },
+  {
+    title: "Estruturas de dados",
+    issuer: "Alura",
+    description: "Certificado de conclusão emitido pela Alura.",
+  },
+  {
+    title: "Imersão Dev com Google Gemini",
+    issuer: "Alura",
+    description: "Desenvolvimento de uma aplicação prática utilizando a API do Google Gemini e tecnologias web.",
+  },
+  {
+    title: "Python para Data Science",
+    issuer: "Alura",
+    description: "Primeiros passos com Python aplicado a Data Science, utilizando bibliotecas como Pandas.",
+  },
+  {
+    title: "Análise de Dados",
+    issuer: "Alura",
+    description: "Boas-vindas ao campo de análise de dados, explorando oportunidades e habilidades necessárias.",
+  },
+  {
+    title: "Começando em Programação",
+    issuer: "Alura",
+    description: "Guia sobre carreira, mercado de trabalho e os primeiros passos para se tornar um desenvolvedor.",
+  },
+  {
+    title: "Excel Avançado",
+    issuer: "Alura",
+    description: "Aprofundamento em fórmulas, tabelas dinâmicas e ferramentas de análise de dados no Excel.",
   },
 ];
 
@@ -276,13 +293,25 @@ function HomePage() {
                     className="h-full w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
                   />
                 )}
+                {!project.video && (
                 <div className="absolute inset-0 grid place-items-center">
                   <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
                     {project.cta === "View case study" ? "Ver estudo de caso" : "Repositório"}
                   </span>
                 </div>
+                )}
               </a>
               <p className="mt-4 max-w-2xl text-sm text-muted-foreground">{project.description}</p>
+              {project.video && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center justify-center rounded-sm border border-border px-4 py-2.5 font-mono text-[10px] font-medium uppercase tracking-widest text-foreground transition-colors hover:border-accent hover:bg-accent/5 hover:text-accent"
+                >
+                  {project.cta}
+                </a>
+              )}
             </article>
           ))}
         </div>
@@ -293,36 +322,46 @@ function HomePage() {
           Cursos e certificados
         </h2>
 
-        <div className="grid gap-16 md:grid-cols-2">
+        <div className="certification-grid grid gap-12 md:grid-cols-2">
           <div>
-            <h3 className="mb-8 font-mono text-xs uppercase tracking-[0.3em] text-accent">Cursos</h3>
+            <h3 className="mb-8 font-mono text-xs uppercase tracking-[0.3em] text-accent">Certificados Databricks</h3>
+            <div className="mb-8 flex h-12 items-center">
+              <a href="https://pt.wikipedia.org/wiki/Databricks" target="_blank" rel="noopener noreferrer" aria-label="Saiba mais sobre a Databricks" className="transition-opacity hover:opacity-70">
+                <img src="https://azure.microsoft.com/svghandler/databricks/?width=600&height=315" alt="Databricks" className="h-8 w-auto object-contain" />
+              </a>
+            </div>
             <div className="space-y-8">
               {courses.map((course) => (
                 <div key={course.title} className="group relative pl-6">
                   <div className="absolute left-0 top-1.5 h-full w-[1px] bg-border" />
                   <div className="absolute -left-[5px] top-1.5 h-2 w-2 rounded-full bg-border transition-colors group-hover:bg-accent" />
-                  <span className="mb-1 block font-mono text-[10px] text-accent">
+                  <span className="hidden">
                     {course.year} — {course.status}
                   </span>
                   <h4 className="font-sans text-base font-medium text-foreground">{course.title}</h4>
-                  <p className="mt-1 text-xs text-muted-foreground">{course.provider}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{course.description}</p>
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-accent">{course.provider}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div>
-            <h3 className="mb-8 font-mono text-xs uppercase tracking-[0.3em] text-accent">Certificações</h3>
+            <h3 className="mb-8 font-mono text-xs uppercase tracking-[0.3em] text-accent">Certificados Alura</h3>
+            <div className="mb-8 flex h-12 items-center">
+              <img src="https://alun.com.br/assets/logos/alura/alura-dark-3000px.png" alt="Alura" className="h-8 w-auto object-contain brightness-0 invert" />
+            </div>
             <div className="space-y-6">
               {certificates.map((cert) => (
                 <div key={cert.title} className="flex items-center justify-between border-b border-border pb-4 group">
                   <div>
+                    <span className="mb-1 block font-mono text-[10px] uppercase tracking-widest text-accent">{cert.issuer}</span>
                     <h4 className="text-sm font-medium text-foreground transition-colors group-hover:text-accent">
                       {cert.title}
                     </h4>
-                    <p className="mt-1 text-xs text-muted-foreground">{cert.issuer}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{cert.description}</p>
                   </div>
-                  <span className="font-mono text-[10px] text-muted-foreground group-hover:text-accent transition-colors">
+                  <span className="hidden">
                     {cert.year}
                   </span>
                 </div>
