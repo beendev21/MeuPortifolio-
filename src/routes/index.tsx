@@ -3,7 +3,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { SocialLink } from "../components/SocialLink";
-import dashboardImage from "../assets/project-dashboard.png";
+import workshopVideo from "../assets/oficina.mp4";
 import engineImage from "../assets/project-engine.png";
 
 export const Route = createFileRoute("/")({
@@ -28,7 +28,7 @@ const projects = [
     description: "Aplicação front-end estruturada com foco em escalabilidade, performance e separação de responsabilidades. Implementa manipulação dinâmica de dados, gerenciamento de estado na interface, otimização de renderização via Intersection Observer e integração com serviços externos (Google Maps e WhatsApp).",
     stack: "HTML • CSS • JavaScript • Google Maps API • WhatsApp API",
     link: "#",
-    image: dashboardImage,
+    video: workshopVideo,
     cta: "Ver projeto",
   },
   {
@@ -187,8 +187,8 @@ function HomePage() {
           </span>
         </div>
         <h1 className="font-sans text-5xl font-semibold leading-[0.9] tracking-tight text-foreground md:text-7xl">
-          Focado em sistemas <br />
-          <span className="text-accent">escaláveis.</span>
+          Breno da Silva <br />
+          <span className="text-accent">Vale.</span>
         </h1>
         <p className="mt-8 max-w-xl font-sans text-lg leading-relaxed text-muted-foreground">
           Desenvolvedor backend Java focado na criação de APIs resilientes e serviços distribuídos com Spring Boot, JPA e PostgreSQL modelos de domínio limpos, código testado e observabilidade em produção.
@@ -255,14 +255,27 @@ function HomePage() {
                 rel="noopener noreferrer"
                 className="relative block aspect-[2/1] overflow-hidden rounded-sm border border-border bg-surface outline-1 outline-offset-[-1px] outline-transparent transition-all duration-500 group-hover:outline-accent/50"
               >
-                <img
-                  src={project.image}
-                  alt={`Preview of ${project.title}`}
-                  loading="lazy"
-                  width={1200}
-                  height={600}
-                  className="h-full w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
-                />
+                {project.video ? (
+                  <video
+                    src={project.video}
+                    aria-label={`Preview de ${project.title}`}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="h-full w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={`Preview of ${project.title}`}
+                    loading="lazy"
+                    width={1200}
+                    height={600}
+                    className="h-full w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+                  />
+                )}
                 <div className="absolute inset-0 grid place-items-center">
                   <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
                     {project.cta === "View case study" ? "Ver estudo de caso" : "Repositório"}
