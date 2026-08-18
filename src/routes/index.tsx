@@ -237,10 +237,14 @@ function HomePage() {
     DeveloperProfile profile() {
 
         return new DeveloperProfile(
-            "Breno da Silva Vale",
+            "`}
+            <mark className="rounded-sm border border-yellow-300/60 bg-yellow-300/10 px-1.5 py-0.5 font-semibold text-yellow-200 shadow-[0_0_10px_rgba(253,224,71,0.35),inset_0_0_8px_rgba(253,224,71,0.12)]">Breno da Silva Vale</mark>
+            {`",
             21,
             "São Paulo - SP",
-            "Cruzeiro do Sul Virtual",
+            "`}
+            <mark className="rounded-sm border border-yellow-300/60 bg-yellow-300/10 px-1.5 py-0.5 font-semibold text-yellow-200 shadow-[0_0_10px_rgba(253,224,71,0.35),inset_0_0_8px_rgba(253,224,71,0.12)]">Cruzeiro do Sul Virtual 2 Semestre</mark>
+            {`",
             "Engenharia de Software",
             "Backend Java / Data Analysis"
         );
